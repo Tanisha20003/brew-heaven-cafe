@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  # Next.js Application
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: brew-haven-cafe
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL:-http://localhost:3000}
+    restart: unless-stopped
+    volumes:
+      - ./public:/app/public
+    networks:
+      - brew-haven-network
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Optional: MongoDB for future backend
+  # db:
+  #   image: mongo:latest
+  #   container_name: brew-haven-db
+  #   ports:
+  #     - "27017:27017"
+  #   environment:
+  #     - MONGO_INITDB_ROOT_USERNAME=admin
+  #     - MONGO_INITDB_ROOT_PASSWORD=password
+  #   volumes:
+  #     - mongo_data:/data/db
+  #   networks:
+  #     - brew-haven-network
+
+  # Optional: Redis for caching
+  # cache:
+  #   image: redis:alpine
+  #   container_name: brew-haven-cache
+  #   ports:
+  #     - "6379:6379"
+  #   networks:
+  #     - brew-haven-network
+
+networks:
+  brew-haven-network:
+    driver: bridge
+
+# volumes:
+#   mongo_data:
+#     driver: local
