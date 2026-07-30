@@ -1,0 +1,28 @@
+{
+  "name": "brew-haven-cafe",
+  "version": "1.0.0",
+  "description": "Premium, nature-inspired cafe website - Brew Haven Café",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "next": "^14.0.0",
+    "framer-motion": "^10.16.0",
+    "zustand": "^4.4.0",
+    "react-icons": "^4.11.0",
+    "react-toastify": "^9.1.0",
+    "swiper": "^11.0.0",
+    "react-swiper": "^0.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}
