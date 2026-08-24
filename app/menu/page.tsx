@@ -1,0 +1,2 @@
+import Header from '@/components/Header'; import Footer from '@/components/Footer'; import MenuGrid from '@/components/MenuGrid'; import PageHero from '@/components/PageHero';
+export default function Menu(){return <><Header/><main><PageHero eyebrow="All-day kitchen & bar" title="A menu made to linger over." text="Craft coffee, easy plates and something sweet for every kind of day."/><section className="menuPage"><MenuGrid/></section></main><Footer/></>}

@@ -1,0 +1,3 @@
+'use client';
+import Link from 'next/link'; import { useState } from 'react';
+export default function Header(){ const [open,setOpen]=useState(false); return <header className="header"><Link href="/" className="brand">brew<span>haven</span><i>☕</i></Link><button className="navToggle" onClick={()=>setOpen(!open)} aria-label="Toggle menu">☰</button><nav className={open?'open':''}><Link href="/menu">Menu</Link><Link href="/gallery">Gallery</Link><Link href="/reservations">Reservations</Link><Link href="/contact">Contact</Link><Link className="navCta" href="/menu">Order online</Link></nav></header> }

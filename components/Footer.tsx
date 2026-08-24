@@ -1,0 +1,2 @@
+import Link from 'next/link';
+export default function Footer(){return <footer><div className="footerBrand">brew<span>haven</span><p>Good coffee. Better days.</p></div><div><strong>Visit us</strong><p>14, Garden Lane, City Centre<br/>Open daily · 8am — 11pm</p></div><div><strong>Explore</strong><p><Link href="/menu">Menu</Link> · <Link href="/reservations">Book a table</Link> · <Link href="/contact">Contact</Link></p></div><small>© 2026 Brew Haven Café. Made for unhurried moments.</small></footer>}

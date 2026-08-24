@@ -1,0 +1,3 @@
+import Header from '@/components/Header'; import Footer from '@/components/Footer'; import PageHero from '@/components/PageHero'; import {img} from '@/lib/data';
+const photos=['photo-1445116572660-236099ec97a0','photo-1495474472287-4d71bcdd2085','photo-1554118811-1e0d58224f24','photo-1461988320302-91bde64fc8e4','photo-1501339847302-ac426a4a7cbb','photo-1541167760496-1628856ab772'];
+export default function Gallery(){return <><Header/><main><PageHero eyebrow="Inside Brew Haven" title="A little look around." text="Warm light, full tables, and the good stuff in between."/><section className="gallery">{photos.map((p,i)=><div key={p} className={`galleryPic g${i}`} style={{backgroundImage:`url(${img(p,1200)})`}}/>)}</section></main><Footer/></>}
